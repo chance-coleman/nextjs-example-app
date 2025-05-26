@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Example App Scaffold
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project scaffold — a clean, opinionated starting point for building modern Next.js applications. It’s set up with essential structure, tooling, and conventions to save time getting new projects off the ground.
 
-First, run the development server:
+## 📦 What's Included
+
+* **Next.js 15** for React-based full-stack applications
+* **React 19**
+* **TypeScript** for typed development
+* **Tailwind CSS 4** for utility-first styling
+* Project scaffolding organized under a `/src` directory for clearer separation of application code from configuration
+* Pre-configured scripts for development, production builds, starting the app, and linting
+
+## 📜 Scripts
+
+Available npm scripts:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install     # Install dependencies
+npm run dev     # Start the development server
+npm run build   # Build the app for production
+npm start       # Start the production build
+npm run lint    # Run lint checks
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+/src
+  /app
+    /layout.tsx        # Root layout wrapping the entire app (header, footer, providers)
+    /page.tsx          # Root-level landing/home page
+    /loading.tsx       # Optional loading spinner for suspense during navigation
+    /error.tsx         # Global error boundary UI
+    /not-found.tsx     # Custom 404 not found page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    /dashboard         # Feature folder for dashboard routes
+      /layout.tsx      # Dashboard-specific layout (sidebar, nav)
+      /page.tsx        # Dashboard home
+      /settings
+        /page.tsx      # Nested dashboard/settings page
 
-## Learn More
+    /profile
+      /page.tsx
+      /edit
+        /page.tsx
 
-To learn more about Next.js, take a look at the following resources:
+    /admin
+      /layout.tsx
+      /users
+        /page.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  /components          # Reusable shared UI components (buttons, forms, modals)
+  /hooks               # Custom React hooks
+  /lib                 # Utilities, API clients, helper functions
+  /context             # React Context providers (Auth, Theme, etc.)
+  /styles              # Global styles, Tailwind config, CSS files
+  /tests               # Unit & integration tests (optionally co-located too)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/public                # Static assets (images, icons, etc.)
 
-## Deploy on Vercel
+/next.config.js        # Next.js configuration
+/package.json          # Project metadata & scripts
+/tsconfig.json         # TypeScript configuration
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📖 Learn More
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* [Next.js Documentation](https://nextjs.org/docs) — explore all Next.js features and APIs.
+* [Learn Next.js](https://nextjs.org/learn) — an interactive tutorial for building Next.js apps.
+* [Tailwind CSS Documentation](https://tailwindcss.com/docs) — utility classes for styling.
+
+## 🚀 Deployment
+
+The easiest way to deploy this app is via [Vercel](https://vercel.com), the creators of Next.js. Check out the [Next.js deployment guide](https://nextjs.org/docs/app/building-your-application/deploying) for details.
